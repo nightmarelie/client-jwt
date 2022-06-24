@@ -5,6 +5,9 @@
   "repository": "git@github.com:nightmarelie/client-jwt.git",
   "author": "Oleksii Kryvtsov <nightmarelie@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.0.0-beta.56",
     "@babel/register": "^7.0.0-beta.56",
@@ -57,6 +60,11 @@
     ],
     "require": [
       "@babel/register"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
     ]
   }
 }
