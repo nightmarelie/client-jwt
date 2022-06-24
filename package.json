@@ -1,0 +1,8 @@
+{
+  "name": "client-jwt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:nightmarelie/client-jwt.git",
+  "author": "Oleksii Kryvtsov <nightmarelie@gmail.com>",
+  "license": "MIT"
+}
