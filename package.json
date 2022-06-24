@@ -8,6 +8,7 @@
   "scripts": {
     "test": "ava"
   },
+  "main": "./src/index.ts",
   "devDependencies": {
     "@babel/preset-env": "^7.0.0-beta.56",
     "@babel/register": "^7.0.0-beta.56",
