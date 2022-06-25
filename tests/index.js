@@ -34,3 +34,25 @@ test("Login captures token information", async t => {
   );
 });
 
+test("Logout removes token information", async t => {
+  const { mock, api } = t.context;
+  const LOGIN_REQUEST = {
+    login: "foo",
+    password: "foo",
+  };
+  const LOGIN_RESPONSE = {
+    token: "TOKEN",
+    refreshToken: "REFRESH_TOKEN",
+  };
+
+  mock.onPost("/auth/login", LOGIN_REQUEST).reply(200, LOGIN_RESPONSE);
+  mock.onGet("/users").reply(200, []);
+
+  await api.login(LOGIN_REQUEST);
+  await api.logout();
+  await api.getUsers();
+
+  t.is(mock.history.get.length, 1);
+  t.falsy(mock.history.get[0].headers.Authorization);
+});
+
